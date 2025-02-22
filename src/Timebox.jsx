@@ -75,7 +75,7 @@ const Timebox = () => {
     <div className={`timebox-container ${darkMode ? "dark" : "light"}`}>
       <div className="header">
         <h1>Timebox</h1>
-        <p>by AKNotes</p>
+        <p>by Sachi</p>
         <AnalogClock time={time} />
         <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)}>
           {darkMode ? "Light Mode" : "Dark Mode"}
