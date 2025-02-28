@@ -75,7 +75,7 @@ const Timebox = () => {
     <div className={`timebox-container ${darkMode ? "dark" : "light"}`}>
       <div className="header">
         <h1>Timebox</h1>
-        <p>by Sachi</p>
+        <p> - by Harvard</p>
         <AnalogClock time={time} />
         <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)}>
           {darkMode ? "Light Mode" : "Dark Mode"}
@@ -83,9 +83,9 @@ const Timebox = () => {
       </div>
       <div className="content">
         <div className="left-panel">
-          <label>Day</label>
+          <label>Date</label>
           <input 
-            type="text" 
+            type="date" 
             className="day-input" 
             value={day} 
             onChange={(e) => setDay(e.target.value)} 
@@ -95,12 +95,14 @@ const Timebox = () => {
             className="goals-input" 
             value={goals} 
             onChange={(e) => setGoals(e.target.value)} 
+            placeholder="Enter goals in priority..."
           ></textarea>
           <label>Brain Dump (To-Do List)</label>
           <textarea 
             className="todo-input" 
             value={todo} 
             onChange={(e) => setTodo(e.target.value)} 
+            placeholder="Enter tasks to complete..."
           ></textarea>
         </div>
         <div className="right-panel">

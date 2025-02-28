@@ -1,22 +1,26 @@
 /* Default Light Mode */
 .timebox-container {
-  width: 80%;
+  width: 100%;
   margin: auto;
   padding: 20px;
   border-radius: 10px;
   font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  color: #000;
+  background-color: #1a1a1a;
+  color: #00ff00;
   transition: background 0.3s ease, color 0.3s ease;
+  box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
 }
 
 .timebox-container.dark {
-  background-color: #1e1e1e;
-  color: #ffffff;
+  background-color: #000;
+  color: #00ff00;
+  box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
 }
 
 .header {
   text-align: center;
+  color: #00ff00;
+  text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
 }
 
 .theme-toggle {
@@ -28,14 +32,16 @@
   border: none;
   cursor: pointer;
   font-size: 14px;
-  background-color: #007bff;
-  color: white;
+  background-color: #00ff00;
+  color: #000;
   border-radius: 5px;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
 }
 
 .theme-toggle:hover {
-  background-color: #0056b3;
+  background-color: #00cc00;
+  box-shadow: 0 0 10px #00cc00, 0 0 20px #00cc00;
 }
 
 /* Layout */
@@ -54,6 +60,8 @@
 .left-panel label {
   font-weight: bold;
   margin-top: 10px;
+  color: #00ff00;
+  text-shadow: 0 0 5px #00ff00;
 }
 
 .day-input,
@@ -62,10 +70,11 @@
   width: 100%;
   padding: 8px;
   margin-top: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #00ff00;
   border-radius: 5px;
-  background-color: #fff;
-  color: #000;
+  background-color: #333;
+  color: #00ff00;
+  box-shadow: inset 0 0 5px #00ff00;
 }
 .goals-input,
 .todo-input {
@@ -75,9 +84,10 @@
 .dark .day-input,
 .dark .goals-input,
 .dark .todo-input {
-  background-color: #333;
-  color: #fff;
-  border: 1px solid #555;
+  background-color: #000;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  box-shadow: inset 0 0 5px #00ff00;
 }
 
 /* Schedule Grid */
@@ -88,25 +98,34 @@
 .schedule-grid {
   display: flex;
   flex-direction: column;
-  border: 1px solid #ccc;
+  max-width: 90%;
+  border: 1px solid #00ff00;
+  box-shadow: 0 0 10px #00ff00;
 }
 
 .schedule-row {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #00ff00;
   padding: 10px;
-  background-color: #f9f9f9;
+  background-color: #1a1a1a;
+  transition: background 0.3s ease;
+}
+
+.schedule-row:hover {
+  background-color: #333;
 }
 
 .dark .schedule-row {
-  background-color: #2c2c2c;
+  background-color: #000;
 }
 
 .time-label {
   width: 50px;
   text-align: center;
   font-weight: bold;
+  color: #00ff00;
+  text-shadow: 0 0 5px #00ff00;
 }
 
 .task-input-container {
@@ -120,59 +139,77 @@
   outline: none;
   font-size: 14px;
   background: transparent;
-  color: #000;
+  color: #00ff00;
 }
 
 .dark .schedule-input {
-  color: #fff;
+  color: #00ff00;
 }
 
-
 .analog-clock {
-    width: 80px;
-    height: 80px;
-    border: 4px solid #333;
-    border-radius: 50%;
-    position: absolute;
-    top: 10px;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  width: 80px;
+  height: 80px;
+  border: 4px solid #00ff00;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  background: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+
+.clock-face {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  background: #00ff00;
+  transform-origin: bottom;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  box-shadow: 0 0 5px #00ff00;
+}
+
+.hour-hand {
+  width: 4px;
+  height: 25px;
+  background: black;
+}
+
+.minute-hand {
+  width: 3px;
+  height: 35px;
+  background: #00ff00;
+}
+
+.second-hand {
+  width: 2px;
+  height: 40px;
+  background: #ff0000;
+  box-shadow: 0 0 5px #ff0000;
+}
+
+/* Neon Effects */
+@keyframes neon {
+  0%, 100% {
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00;
   }
-  
-  .clock-face {
-    width: 100%;
-    height: 100%;
-    position: relative;
+  50% {
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 80px #ff00ff, 0 0 160px #ff00ff;
   }
-  
-  .hand {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    background: navy;
-    transform-origin: bottom;
-    transform: translateX(-50%);
-    border-radius: 2px;
-  }
-  
-  .hour-hand {
-    width: 4px;
-    height: 25px;
-    background: #000;
-  }
-  
-  .minute-hand {
-    width: 3px;
-    height: 35px;
-    background: grey;
-  }
-  
-  .second-hand {
-    width: 2px;
-    height: 40px;
-    background: red;
-  }
-  
+}
+
+.header {
+  animation: neon 1.5s infinite alternate;
+}
+
+.left-panel label {
+  animation: neon 1.5s infinite alternate;
+}
